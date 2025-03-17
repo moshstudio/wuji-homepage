@@ -75,7 +75,7 @@ function getDownloadLink() {
       :offset="10"
     >
       <p
-        class="font-bold animated-gradient-text mx-auto py-[40px]"
+        class="font-bold animated-gradient-text mx-auto pt-[20vh]"
         style="font-size: clamp(1.5rem, 8vw, 4rem); white-space: nowrap"
       >
         音乐、书籍、图片、漫画
@@ -85,7 +85,7 @@ function getDownloadLink() {
       animation="fade-up"
       :duration="800"
     >
-      <div class="flex flex-col gap-2 items-center w-[150px]">
+      <div class="flex flex-col gap-2 items-center w-[150px] pt-[20vh]">
         <van-button
           size="large"
           color="linear-gradient(to right, #ff6034, #ee0a24)"
@@ -111,7 +111,7 @@ function getDownloadLink() {
       </div>
     </aos-vue>
 
-    <div class="w-full flex justify-center flex-wrap gap-4 mt-[120px]">
+    <div class="w-full flex justify-center flex-wrap gap-4 mt-[120px] mb-[20vh]">
       <ImageShow
         v-for="(item, index) in images"
         :key="index"
