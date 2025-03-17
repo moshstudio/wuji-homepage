@@ -8,14 +8,14 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="relative flex flex-col gap-2 items-center w-[250px] h-[200px]">
+  <div class="relative flex flex-col gap-4 items-center w-[250px] h-[200px]">
     <van-image
       :src="props.winImage"
       width="250"
       height="130"
       class="shadow"
     />
-    <div class="shadow-lg absolute right-0 bottom-8">
+    <div class="shadow-lg absolute right-0 bottom-[60px]">
       <van-image
         :src="props.mobileImage"
         width="100"
@@ -24,8 +24,6 @@ const props = defineProps({
       />
     </div>
   </div>
-
-  
 </template>
 
 <style scoped lang="less"></style>
