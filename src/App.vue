@@ -111,13 +111,14 @@ function getDownloadLink() {
       </div>
     </aos-vue>
 
-    <div class="w-full flex justify-center flex-wrap gap-4 mt-[120px] mb-[20vh]">
+    <div
+      class="w-full flex justify-around flex-wrap gap-4 mt-[120px] mb-[20vh]"
+    >
       <ImageShow
         v-for="(item, index) in images"
         :key="index"
         :winImage="item.winImage"
         :mobileImage="item.mobileImage"
-        class="w-full sm:w-[calc(50%-20px)] md:w-[calc(25%-30px)] p-6 text-center"
       ></ImageShow>
     </div>
     <div class="download flex w-full justify-around gap-4 mt-[40px] mb-[30vh]">
