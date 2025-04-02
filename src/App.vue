@@ -32,6 +32,11 @@ const images = [
     mobileImage:
       "https://image-bed.s3.bitiful.net/wuji-home%2Fcomic_mobile.jpg",
   },
+  {
+    winImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fvideo_win.jpg",
+    mobileImage:
+      "https://image-bed.s3.bitiful.net/wuji-home%2Fvideo_mobile.jpg",
+  },
 ];
 
 function isMobileDevice() {
@@ -70,58 +75,64 @@ function getDownloadLink() {
         >立即下载</van-button
       >
     </div>
-    <aos-vue
-      animation="fade-up"
-      :offset="10"
+    <p
+      class="font-bold animated-gradient-text mx-auto pt-[20vh]"
+      style="font-size: clamp(1.3rem, 7vw, 3.5rem); white-space: nowrap"
     >
-      <p
-        class="font-bold animated-gradient-text mx-auto pt-[20vh]"
-        style="font-size: clamp(1.5rem, 8vw, 4rem); white-space: nowrap"
-      >
-        音乐、书籍、图片、漫画
-      </p>
-    </aos-vue>
-    <aos-vue
-      animation="fade-up"
-      :duration="800"
-    >
-      <div class="flex flex-col gap-2 items-center w-[150px] pt-[20vh]">
-        <van-button
-          size="large"
-          color="linear-gradient(to right, #ff6034, #ee0a24)"
-          @click="getDownloadLink"
-        >
-          <template #icon>
-            <div class="flex items-center">
-              <van-image
-                :src="LogoImage"
-                width="28"
-                height="28"
-              />
-            </div>
-          </template>
-          立即获取无极
-        </van-button>
-        <p
-          class="text-base text-gray-500 underline underline-offset-4 cursor-pointer"
-          @click="scrollToDownload"
-        >
-          查看所有下载选项
-        </p>
-      </div>
-    </aos-vue>
+      音乐、书籍、图片、漫画、影视
+    </p>
 
-    <div
-      class="w-full flex justify-around flex-wrap gap-4 mt-[120px] mb-[20vh]"
-    >
-      <ImageShow
-        v-for="(item, index) in images"
-        :key="index"
-        :winImage="item.winImage"
-        :mobileImage="item.mobileImage"
-      ></ImageShow>
+    <div class="flex flex-col gap-2 items-center w-[150px] pt-[20vh]">
+      <van-button
+        size="large"
+        color="linear-gradient(to right, #ff6034, #ee0a24)"
+        @click="getDownloadLink"
+      >
+        <template #icon>
+          <div class="flex items-center">
+            <van-image
+              :src="LogoImage"
+              width="28"
+              height="28"
+            />
+          </div>
+        </template>
+        立即获取无极
+      </van-button>
+      <p
+        class="text-base text-gray-500 underline underline-offset-4 cursor-pointer"
+        @click="scrollToDownload"
+      >
+        查看所有下载选项
+      </p>
     </div>
-    <div class="download flex w-full justify-around gap-4 mt-[40px] mb-[30vh]">
+
+    <div class="relative w-full overflow-hidden py-[200px]">
+      <div class="flex gap-[10vw] animate-infinite-scroll">
+        <!-- 第一组图片 -->
+        <div
+          v-for="(item, index) in images"
+          :key="`first-${index}`"
+        >
+          <ImageShow
+            :winImage="item.winImage"
+            :mobileImage="item.mobileImage"
+          />
+        </div>
+
+        <!-- 第二组重复图片 -->
+        <div
+          v-for="(item, index) in images"
+          :key="`second-${index}`"
+        >
+          <ImageShow
+            :winImage="item.winImage"
+            :mobileImage="item.mobileImage"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="download flex w-full justify-around gap-4 pt-[20vh] pb-[50vh]">
       <div class="flex flex-col gap-2 items-center">
         <van-image
           :src="WinSvg"
@@ -192,5 +203,27 @@ body {
   background-clip: text;
   color: transparent;
   animation: gradientBackground 5s ease infinite;
+}
+.animate-infinite-scroll {
+  animation: infinite-scroll 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 </style>
