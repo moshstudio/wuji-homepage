@@ -5,6 +5,16 @@ import LogoImage from "./assets/wuji.svg";
 import ImageShow from "./components/ImageShow.vue";
 import AndroidSvg from "./assets/android.svg";
 import WinSvg from "./assets/win.svg";
+import BookWin from "./assets/images/win/book_win.png";
+import BookMobile from "./assets/images/mobile/book_mobile.png";
+import ComicWin from "./assets/images/win/comic_win.png";
+import ComicMobile from "./assets/images/mobile/comic_mobile.png";
+import PhotoWin from "./assets/images/win/photo_win.jpg";
+import PhotoMobile from "./assets/images/mobile/photo_mobile.png";
+import SongWin from "./assets/images/win/song_win.png";
+import SongMobile from "./assets/images/mobile/song_mobile.png";
+import VideoWin from "./assets/images/win/video_win.jpg";
+import VideoMobile from "./assets/images/mobile/video_mobile.jpg";
 import { androidDownloadLink, WinDownloadLink } from "./links";
 
 const scrollToDownload = () => {
@@ -15,27 +25,24 @@ const scrollToDownload = () => {
 
 const images = [
   {
-    winImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fphoto_win.jpg",
-    mobileImage:
-      "https://image-bed.s3.bitiful.net/wuji-home%2Fphoto_mobile.jpg",
+    winImage: PhotoWin,
+    mobileImage: PhotoMobile,
   },
   {
-    winImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fsong_win.jpg",
-    mobileImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fsong_mobile.jpg",
+    winImage: SongWin,
+    mobileImage: SongMobile,
   },
   {
-    winImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fbook_win.jpg",
-    mobileImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fbook_mobile.jpg",
+    winImage: BookWin,
+    mobileImage: BookMobile,
   },
   {
-    winImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fcomic_win.jpg",
-    mobileImage:
-      "https://image-bed.s3.bitiful.net/wuji-home%2Fcomic_mobile.jpg",
+    winImage: ComicWin,
+    mobileImage: ComicMobile,
   },
   {
-    winImage: "https://image-bed.s3.bitiful.net/wuji-home%2Fvideo_win.jpg",
-    mobileImage:
-      "https://image-bed.s3.bitiful.net/wuji-home%2Fvideo_mobile.jpg",
+    winImage: VideoWin,
+    mobileImage: VideoMobile,
   },
 ];
 
